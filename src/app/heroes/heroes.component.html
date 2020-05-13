@@ -1,0 +1,16 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!--
+    [class.selected]="hero === selectedHero"
+      conditionally applies the css class selected based on the result
+      of evaluating the JS on the RHS
+  -->
+  <li
+    *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+    [class.selected]="hero === selectedHero"
+  >
+    <span class="badge">{{ hero.id }}</span>
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
